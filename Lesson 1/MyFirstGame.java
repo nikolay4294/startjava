@@ -1,19 +1,19 @@
 public class MyFirstGame {
     public static void main(String[] args) {
-        int numComputer = 25;
-        int numPlayer = 20;
+        int hiddenNum = 25;
+        int playerNum = 20;
 
-            while(numPlayer <= 100) {
-                if(numComputer == numPlayer) {
-                    System.out.println("Вы угадали!");
-                    return;
-                } else if(numComputer > numPlayer) {
-                    System.out.println("Введенное вами число меньше того, что загадал компьютер");
-                    numPlayer++;
-                } else if(numComputer < numPlayer) {
-                    System.out.println("Введенное вами число больше того, что загадал компьютер");
-                    numPlayer++;
-                }
+        while(playerNum <= 100) {
+            if(playerNum == hiddenNum) {
+                System.out.println("Вы угадали!");
+                return;
+            } else if(playerNum > hiddenNum) {
+                System.out.println("Введенное вами число больше того, что загадал компьютер");
+                playerNum++;
+            } else if(playerNum < hiddenNum) {
+                System.out.println("Введенное вами число меньше того, что загадал компьютер");
+                playerNum++;
             }
+        }
     }
 }
