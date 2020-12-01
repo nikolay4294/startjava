@@ -1,7 +1,8 @@
 public class Unicode {
+
     public static void main(String[] args) {
-        for(int i = 9398; i <= 10178; i++) {
-            System.out.print((char) i);
+        for(char c = 9398; c <= 10178; c++) {
+            System.out.print(c);
         }
     }
 }
