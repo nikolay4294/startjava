@@ -9,15 +9,19 @@ public class Person {
     public void move() {
 
     }
+
     public void seat() {
 
     }
+
     public void run() {
 
     }
+
     public void speak() {
 
     }
+
     public void learnJava() {
 
     }
