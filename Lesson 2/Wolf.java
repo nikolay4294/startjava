@@ -2,8 +2,8 @@ public class Wolf {
 
     String gender;
     String name;
-    float hieght;
     float weight;
+    float age;
     String color;
 
     public void move() {
@@ -33,17 +33,17 @@ class WolfTest {
 
         Wolf wolf = new Wolf();
 
-        wolf.gender = "male";
-        wolf.name = "Chak";
-        wolf.hieght = 12.6f;
-        wolf.weight = 32.5f;
-        wolf.color = "white";
+        wolf.gender = "мужской";
+        wolf.name = "Чак";
+        wolf.weight = 12.6f;
+        wolf.age = 2.5f;
+        wolf.color = "белый";
 
         System.out.println("Пол волка - " + wolf.gender);
         System.out.println("Имя волка - " + wolf.name);
-        System.out.println("Рост волка - " + wolf.hieght);
-        System.out.println("Вес волка - " + wolf.weight);
-        System.out.println("Цвет волка - " + wolf.color);
+        System.out.println("Вес волка - " + wolf.weight + " кг");
+        System.out.println("Возраст волка - " + wolf.age);
+        System.out.println("Окрас волка - " + wolf.color);
 
         wolf.move();
         wolf.seat();
