@@ -32,9 +32,9 @@ public class Wolf {
         return age;
     }
 
-    public void setAge(Float d) {
+    public void setAge(Float age) {
         if(d >= 0 && d <= 8) {
-            age = d;
+            this.age = age;
         } else {
             System.out.println("Некорректный возраст");
         }
