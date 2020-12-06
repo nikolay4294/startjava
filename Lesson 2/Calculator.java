@@ -1,5 +1,5 @@
 public class Calculator {
-
+    public void getOperation(char mathOperation, int a, int b) { //метод принимает 2 значения и математический символ
         switch(mathOperation) {
             case '+' :
                 System.out.println(a + b);
@@ -24,7 +24,7 @@ public class Calculator {
                 System.out.println(a % b);
                 break;
             default :
-              System.out.println("Такого математического действия не существует. Введите корректный символ");
+                System.out.println("Такого математического действия не существует. Введите корректный символ");
         }
     }
-
+}
