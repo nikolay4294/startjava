@@ -9,11 +9,11 @@ class WolfTest {
         wolf.setAge(2.5f);
         wolf.setColor("белый");
 
-        System.out.println("Пол волка - " + wolf.getGender);
-        System.out.println("Имя волка - " + wolf.getName);
-        System.out.println("Вес волка - " + wolf.getWeight + " кг");
-        System.out.println("Возраст волка - " + wolf.getAge);
-        System.out.println("Окрас волка - " + wolf.getColor);
+        System.out.println("Пол волка - " + wolf.getGender());
+        System.out.println("Имя волка - " + wolf.getName());
+        System.out.println("Вес волка - " + wolf.getWeight() + " кг");
+        System.out.println("Возраст волка - " + wolf.getAge());
+        System.out.println("Окрас волка - " + wolf.getColor());
 
         wolf.move();
         wolf.seat();
