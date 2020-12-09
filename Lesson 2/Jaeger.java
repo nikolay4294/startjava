@@ -1,27 +1,61 @@
 public class Jaeger{
 
-    String modelName = "Bracer Phoenix";
-    String mark = "Mark-5";
-    String origin = "USA";
-    Float height = 70.7;
-    Float weight = 2.1;
-    int speed = 3;
-    int strenght = 8;
-    int armor =9;
+    String modelName;
+    String mark;
+    String origin;
+    Float height;
+    Float weight;
+    int speed;
+    int strength;
+    int armor;
 
-    boolean drift() {
+    public void setModelName(String modelName) {
+            this.modelName = modelName;
+    }
 
+    public String getModelName() {
+            return modelName;
+    }
+
+    public void setMark(String mark) {
+        this.mark = mark;
+    }
+
+    public String getMark() {
+        return mark;
+    }
+
+    public void setOrigin(String origin) {
+        this.origin = origin;
+    }
+
+    public String getOrigin() {
+        return origin;
+    }
+
+    public void setWeight(Float weight) {
+        this.weight = weight;
+    }
+
+    public Float getWeight() {
+        return weight;
+    }
+
+    boolean drift(String jaegerName) {
+        System.out.println("Метод drift, робота " + jaegerName + " корректно отработал");
+        return true;
     }
 
     void move() {
-
+        System.out.println("Метод move корректно отработал");
     }
 
     String scanKaiju() {
-
+        System.out.println("Метод scanKaiju корректно отработал");
+        return "Обнаружен Kaiju";
     }
 
     void useVortexCannon() {
-
+        System.out.println("Метод useVortexCannon корректно отработал");
     }
 }
