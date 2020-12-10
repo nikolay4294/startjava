@@ -1,10 +1,8 @@
-public class JaegerTest{
-
+public class JaegerTest {
     public static void main(String[] args) {
         Jaeger jaegerRomeoBlue = new Jaeger();
         Jaeger jaegerGipsyDanger = new Jaeger();
 
-        //Полиморфизм работает)
         jaegerRomeoBlue.setModelName("Romeo Blue");
         jaegerRomeoBlue.getModelName();
         jaegerRomeoBlue.drift("Romeo Blue");

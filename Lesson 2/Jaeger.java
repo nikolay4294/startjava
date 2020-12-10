@@ -1,13 +1,13 @@
-public class Jaeger{
+public class Jaeger {
 
-    String modelName;
-    String mark;
-    String origin;
-    Float height;
-    Float weight;
-    int speed;
-    int strength;
-    int armor;
+    private String modelName;
+    private String mark;
+    private String origin;
+    private Float height;
+    private Float weight;
+    private int speed;
+    private int strength;
+    private int armor;
 
     public void setModelName(String modelName) {
             this.modelName = modelName;
