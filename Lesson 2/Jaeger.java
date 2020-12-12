@@ -9,53 +9,26 @@ public class Jaeger {
     private int strength;
     private int armor;
 
-    public void setModelName(String modelName) {
-            this.modelName = modelName;
+    public Jaeger(String modelName, String mark, String origin, float height, float weight, int speed, int strength, int armor) {
+        this.modelName = modelName;
+        this.mark = mark;
+        this.origin = origin;
+        this.height = height;
+        this.weight = weight;
+        this.speed = speed;
+        this.strength = strength;
+        this.armor = armor;
     }
 
     public String getModelName() {
-            return modelName;
-    }
-
-    public void setMark(String mark) {
-        this.mark = mark;
+        return modelName;
     }
 
     public String getMark() {
         return mark;
     }
 
-    public void setOrigin(String origin) {
-        this.origin = origin;
-    }
-
-    public String getOrigin() {
-        return origin;
-    }
-
-    public void setWeight(Float weight) {
-        this.weight = weight;
-    }
-
-    public Float getWeight() {
-        return weight;
-    }
-
-    boolean drift(String jaegerName) {
-        System.out.println("Метод drift, робота " + jaegerName + " корректно отработал");
-        return true;
-    }
-
-    void move() {
-        System.out.println("Метод move корректно отработал");
-    }
-
-    String scanKaiju() {
-        System.out.println("Метод scanKaiju корректно отработал");
-        return "Обнаружен Kaiju";
-    }
-
-    void useVortexCannon() {
-        System.out.println("Метод useVortexCannon корректно отработал");
+    public int getSpeed() {
+        return speed;
     }
 }
