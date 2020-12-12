@@ -1,7 +1,5 @@
 public class Calculator {
-
-    //метод принимает математическое выражение(два числа и знак)
-    public void doMathOperation(char mathSign, int a, int b) {
+    public void calculate (char mathSign, int a, int b) {
         switch(mathSign) {
             case '+' :
                 System.out.println(a + b);

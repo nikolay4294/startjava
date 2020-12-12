@@ -3,8 +3,8 @@ public class Jaeger {
     private String modelName;
     private String mark;
     private String origin;
-    private Float height;
-    private Float weight;
+    private float height;
+    private float weight;
     private int speed;
     private int strength;
     private int armor;
