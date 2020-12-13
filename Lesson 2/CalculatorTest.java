@@ -12,8 +12,6 @@ class CalculatorTest {
             System.out.println("Введите второе число : ");
             int b = scanner.nextInt();
             calculator.calculate(mathSign, a, b);
-            System.out.println("Хотите продолжить вычисления? [да/нет]:");
-            userAnswer = scanner.next();
                 while(true) {
                     System.out.println("Хотите продолжить вычисления? [да/нет]:");
                     userAnswer = scanner.next();
