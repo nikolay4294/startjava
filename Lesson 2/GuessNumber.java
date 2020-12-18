@@ -1,13 +1,14 @@
 public class GuessNumber {
-    //метод для определения случайного числа, которое загадал компьютер. Делаю его статическим,
-    //что бы не создавать экземпляр класса при вызове метода
+    public GuessNumber(Player player1, Player player2){
+
+     }
+
     public static int randomComputerNum() {
         Random random = new Random();
         int num = random.nextInt(100) + 1;
         return num;
     }
 
-    //метод в котором происходит весь игровой процесс
     public void startGame() {
         int numComputer = randomComputerNum();
         Scanner scanner = new Scanner(System.in);
