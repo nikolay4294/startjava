@@ -18,10 +18,10 @@ class GuessNumberTest {
                 System.out.println(playerAnswer);
                     if (playerAnswer.equals("да")) {
                          break;
-                    } else if(playerAnswer.equals("нет")){
+                    } else if(playerAnswer.equals("нет")) {
                         return;
                     }
             }
         } while (!playerAnswer.equals("нет")) ;
     }
- }
+}
