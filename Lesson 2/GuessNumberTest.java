@@ -12,16 +12,11 @@ class GuessNumberTest {
         String playerAnswer;
         do {
             game.start();
-            while (true) {
+            do {
                 System.out.println("Хотите продолжить игру? [да/нет]:");
                 playerAnswer = scanner.next();
                 System.out.println(playerAnswer);
-                    if (playerAnswer.equals("да")) {
-                         break;
-                    } else if(playerAnswer.equals("нет")) {
-                        return;
-                    }
-            }
+            } while (!playerAnswer.equals("да") && !playerAnswer.equals("нет"));
         } while (!playerAnswer.equals("нет")) ;
     }
 }

@@ -8,7 +8,7 @@ public class GuessNumber {
     }
 
     public void start() {
-        int randomNum = genarateNumberNum();
+        int randomNum = generateSecretNum();
         Scanner scanner = new Scanner(System.in);
         //проверяю какое число загадал компьютер
         System.out.println(randomNum);
@@ -38,7 +38,7 @@ public class GuessNumber {
         }
     }
 
-     public int genarateNumberNum() {
+     public int generateSecretNum() {
         Random random = new Random();
         return random.nextInt(100) + 1;
     }
