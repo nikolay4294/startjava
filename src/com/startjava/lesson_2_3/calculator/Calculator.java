@@ -6,7 +6,7 @@ public class Calculator {
             case '+' :
                 System.out.println(a + b);
                 break;
-            case'-' :
+            case '-' :
                 System.out.println(a - b);
                 break;
             case '*' :
@@ -15,12 +15,11 @@ public class Calculator {
             case '/' :
                 System.out.println(a / b);
                 break;
+                /*
+                added method of Math class
+                 */
             case '^' :
-                long result = 1;
-                for(int i = 1; i <= b; i++) {
-                    result *= a;
-                }
-                System.out.println(result);
+                System.out.println((int) Math.pow(a, b));
                 break;
             case '%' :
                 System.out.println(a % b);
