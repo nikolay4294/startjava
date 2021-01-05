@@ -8,20 +8,15 @@ class CalculatorTest {
         Calculator calculator = new Calculator();
         String userAnswer;
 
-        do {
-            System.out.print("Введите математическое выражение: ");
-            String mathematicalExpression = scanner.nextLine();
+    do {
+        System.out.print("Введите математическое выражение: ");
+        String mathExpression = scanner.nextLine();
+        calculator.calculate(mathExpression);
 
-            calculator.calculate(mathematicalExpression);
-                while(true) {
-                    System.out.println("Хотите продолжить вычисления? [да/нет]:");
-                    userAnswer = scanner.nextLine();
-                        if(userAnswer.equals("да")) {
-                            break;
-                        } else if(userAnswer.equals("нет")) {
-                            return;
-                    }
-                }
-        } while (!userAnswer.equals("нет"));
+        do {
+            System.out.println("Хотите продолжить вычисления? [да/нет]:");
+            userAnswer = scanner.nextLine();
+        } while(!userAnswer.equals("да") && !userAnswer.equals("нет"));
+    } while (!userAnswer.equals("нет"));
     }
 }
