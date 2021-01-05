@@ -1,14 +1,14 @@
-package com.startjava.lesson_2_3.game;
+package com.startjava.lesson_2_3_4.game;
 
 import java.util.*;
 
 class GuessNumberTest {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Игра началась. Компьютер загадал число от 0 до 100. Попробуй угадать какое!");
-        System.out.println("Введите имя первого игрока :");
+        System.out.println("У вас 10 попыток");
+        System.out.print("Введите имя первого игрока :");
         Player player1 = new Player(scanner.next());
-        System.out.println("Введите имя второго игрока :");
+        System.out.print("Введите имя второго игрока :");
         Player player2 = new Player(scanner.next());
 
         //передаю в конструктор игры созданные объекты
@@ -22,5 +22,6 @@ class GuessNumberTest {
                 System.out.println(playerAnswer);
             } while (!playerAnswer.equals("да") && !playerAnswer.equals("нет"));
         } while (!playerAnswer.equals("нет")) ;
+        System.out.println(Arrays.toString(player1.array));
     }
 }
