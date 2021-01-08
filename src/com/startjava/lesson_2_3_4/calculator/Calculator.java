@@ -1,36 +1,38 @@
 package com.startjava.lesson_2_3_4.calculator;
 
 public class Calculator {
-    public void calculate(String mathExpression) {
-        String[] splitArray = mathExpression.split(" ");
-        int numOne = Integer.parseInt(splitArray[0]);
-        char mathSing = splitArray[1].charAt(0);
-        int numTwo = Integer.parseInt(splitArray[2]);
+    public int calculate(String mathExpression) {
+        String[] splitMathExpression = mathExpression.split(" ");
+        int numOne = Integer.parseInt(splitMathExpression[0]);
+        char mathSing = splitMathExpression[1].charAt(0);
+        int numTwo = Integer.parseInt(splitMathExpression[2]);
+        int operationResult = 0;
 
-        switch(mathSing) {
-            case '+' :
-                System.out.println(numOne + numTwo);
+        switch (mathSing) {
+            case '+':
+                operationResult = numOne + numTwo;
                 break;
-            case '-' :
-                System.out.println(numOne - numTwo);
+            case '-':
+                operationResult = numOne - numTwo;
                 break;
-            case '*' :
-                System.out.println(numOne * numTwo);
+            case '*':
+                operationResult =numOne * numTwo;
                 break;
-            case '/' :
-                System.out.println(numOne / numTwo);
+            case '/':
+                operationResult = numOne / numTwo;
                 break;
                 /*
                 added method of Math class
                  */
-            case '^' :
-                System.out.println((int) Math.pow(numOne, numTwo));
+            case '^':
+                operationResult = ((int) Math.pow(numOne, numTwo));
                 break;
-            case '%' :
-                System.out.println(numOne % numTwo);
+            case '%':
+                operationResult = numOne % numTwo;
                 break;
-            default :
+            default:
                 System.out.println("Такого математического действия не существует. Введите корректный символ");
         }
+        return operationResult;
     }
 }

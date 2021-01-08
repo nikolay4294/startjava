@@ -1,12 +1,20 @@
 package com.startjava.lesson_2_3_4.game;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class Player {
     private String name;
-    private int num;
-    int[] array = new int[10];
-    //int[] arrayTwo = new int[10];
+    private int[] playerNum = new int[10];
+
+    public int[] getPlayerNum() {
+        return playerNum;
+    }
+
+    public void setPlayerNum(int a) {
+        for(int i = 0; i < playerNum.length - 1; i++) {
+            playerNum[i] = a;
+        }
+    }
 
     public Player(String name) {
         this.name = name;
@@ -16,16 +24,12 @@ public class Player {
         return name;
     }
 
-    public void setNum(int num) {
-        this.num = num;
-    }
-
-    public int getNum() {
+    // this method read player number from console and return this number
+    public int readNumFromConsole(String name) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Игрок " + name + " выбирает число");
+        int num = scanner.nextInt();
+        setPlayerNum(num);
         return num;
-    }
-
-    // метод записывает введеное пользователем число в массив.
-    public void writeNumInArray(int a) {
-        Arrays.fill(array, a);
     }
 }

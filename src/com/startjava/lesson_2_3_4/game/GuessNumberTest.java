@@ -6,9 +6,9 @@ class GuessNumberTest {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("У вас 10 попыток");
-        System.out.print("Введите имя первого игрока :");
+        System.out.print("Введите имя первого игрока: ");
         Player player1 = new Player(scanner.next());
-        System.out.print("Введите имя второго игрока :");
+        System.out.print("Введите имя второго игрока: ");
         Player player2 = new Player(scanner.next());
 
         //передаю в конструктор игры созданные объекты
@@ -22,6 +22,5 @@ class GuessNumberTest {
                 System.out.println(playerAnswer);
             } while (!playerAnswer.equals("да") && !playerAnswer.equals("нет"));
         } while (!playerAnswer.equals("нет")) ;
-        System.out.println(Arrays.toString(player1.array));
     }
 }

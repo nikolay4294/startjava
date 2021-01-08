@@ -13,42 +13,44 @@ public class GuessNumber {
 
     public void start() {
         int randomNum = generateSecretNum();
-        Scanner scanner = new Scanner(System.in);
-        //проверяю какое число загадал компьютер
         System.out.println(randomNum);
+        int firstPlayerAttempt = 0;
+        int secondPlayerAttempt = 0;
 
-
-            while (true) {
-                System.out.println("Игрок " + player1.getName() + " выбирает число");
-                int numPlayer = scanner.nextInt();
-                player1.writeNumInArray(numPlayer);
-
-                if (numPlayer == randomNum) {
-                    System.out.println("Вы угадали!");
-                    break;
-                } else if (numPlayer > randomNum) {
-                    System.out.println("Вы не угадали, загаданное число меньше. Ход переходит к игроку " + player2.getName());
-                } else if (numPlayer < randomNum) {
-                    System.out.println("Вы не угадали, загаданное число больше. Ход переходит к игроку " + player2.getName());
+            while(true) {
+                while(firstPlayerAttempt <= 10) {
+                    int numPlayer = player1.readNumFromConsole(player1.getName());
+                    firstPlayerAttempt++;
+                    if (numPlayer == randomNum) {
+                        System.out.println("Вы угадали!");
+                        System.out.println(Arrays.toString(player1.getPlayerNum()));
+                        return;
+                    } else if (numPlayer > randomNum) {
+                        System.out.println("Вы не угадали, загаданное число меньше. Ход переходит к игроку " + player2.getName());
+                    } else if (randomNum > numPlayer) {
+                        System.out.println("Вы не угадали, загаданное число больше. Ход переходит к игроку " + player2.getName());
+                    }
                 }
 
-                int numPlayer2 = scanner.nextInt();
-                player2.writeNumInArray(numPlayer2);
-
-                if (numPlayer2 == randomNum) {
-                    System.out.println("Вы угадали!");
-                    break;
-                } else if (numPlayer2 > randomNum) {
-                    System.out.println("Вы не угадали, загаданное число больше. Ход переходит к игроку " + player1.getName());
-                } else if (numPlayer2 < randomNum) {
-                    System.out.println("Вы не угадали, загаданное число больше. Ход переходит к игроку " + player1.getName());
+                while(secondPlayerAttempt <= 10) {
+                    int numPlayer2 = player2.readNumFromConsole(player2.getName());
+                    secondPlayerAttempt++;
+                    if (numPlayer2 == randomNum) {
+                        System.out.println("Вы угадали!");
+                        System.out.println(Arrays.toString(player2.getPlayerNum()));
+                        return;
+                    } else if (numPlayer2 > randomNum) {
+                        System.out.println("Вы не угадали, загаданное число больше. Ход переходит к игроку " + player1.getName());
+                    } else if (numPlayer2 < randomNum) {
+                        System.out.println("Вы не угадали, загаданное число больше. Ход переходит к игроку " + player1.getName());
+                    }
                 }
             }
-        }
+    }
 
-
-     public int generateSecretNum() {
+    private int generateSecretNum() {
         Random random = new Random();
         return random.nextInt(100) + 1;
     }
 }
+
