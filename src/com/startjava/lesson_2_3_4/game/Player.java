@@ -4,8 +4,8 @@ import java.util.*;
 
 public class Player {
     private String name;
-    private int[] playerNums = new int[10];
-    private int playerAttempt = 0;
+    private int[] number = new int[10];
+    private int attempt = 0;
 
     public Player(String name) {
         this.name = name;
@@ -15,23 +15,23 @@ public class Player {
         return name;
     }
 
-    public int[] getPlayerNums() {
-        return Arrays.copyOf(playerNums, 10);
+    public int[] getNumber() {
+        return Arrays.copyOf(number, 10);
     }
 
-    public void setPlayerNums(int a) {
-        playerNums[playerAttempt] = a;
+    public void setNumber(int num) {
+        number[attempt] = num;
     }
 
-    public int getPlayerAttempt() {
-        return playerAttempt;
+    public int getAttempt() {
+        return attempt;
     }
 
-    public void setPlayerAttempt(int c) {
-        this.playerAttempt = c;
+    public void setAttempt(int attempt) {
+        this.attempt = attempt;
     }
 
-    public void clearPlayerNums() {
-        Arrays.fill(playerNums, 0);
+    public void clearNumber() {
+        Arrays.fill(number, 0);
     }
 }
