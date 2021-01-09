@@ -6,33 +6,26 @@ public class Calculator {
         int numOne = Integer.parseInt(splitMathExpression[0]);
         char mathSing = splitMathExpression[1].charAt(0);
         int numTwo = Integer.parseInt(splitMathExpression[2]);
-        int operationResult = 0;
 
         switch (mathSing) {
             case '+':
-                operationResult = numOne + numTwo;
-                break;
+                return numOne + numTwo;
             case '-':
-                operationResult = numOne - numTwo;
-                break;
+                return numOne - numTwo;
             case '*':
-                operationResult =numOne * numTwo;
-                break;
+                return numOne * numTwo;
             case '/':
-                operationResult = numOne / numTwo;
-                break;
+                return numOne / numTwo;
                 /*
                 added method of Math class
                  */
             case '^':
-                operationResult = ((int) Math.pow(numOne, numTwo));
-                break;
+                return ((int) Math.pow(numOne, numTwo));
             case '%':
-                operationResult = numOne % numTwo;
-                break;
+                return numOne % numTwo;
             default:
                 System.out.println("Такого математического действия не существует. Введите корректный символ");
         }
-        return operationResult;
+        return 0;
     }
 }

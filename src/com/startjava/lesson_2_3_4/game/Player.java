@@ -4,17 +4,10 @@ import java.util.*;
 
 public class Player {
     private String name;
-    private int[] playerNum = new int[10];
-
-    public int[] getPlayerNum() {
-        return playerNum;
-    }
-
-    public void setPlayerNum(int a) {
-        for(int i = 0; i < playerNum.length - 1; i++) {
-            playerNum[i] = a;
-        }
-    }
+    private int[] firstPlayerNums = new int[10];
+    private int[] secondPlayerNums = new int[10];
+    private int firstPlayerAttempt = 0;
+    private int secondPlayerAttempt = 0;
 
     public Player(String name) {
         this.name = name;
@@ -24,12 +17,35 @@ public class Player {
         return name;
     }
 
-    // this method read player number from console and return this number
-    public int readNumFromConsole(String name) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Игрок " + name + " выбирает число");
-        int num = scanner.nextInt();
-        setPlayerNum(num);
-        return num;
+    public int[] getFirstPlayerNums() {
+        return Arrays.copyOf(firstPlayerNums, 10);
+    }
+
+    public void setFirstPlayerNums(int a) {
+        firstPlayerNums[firstPlayerAttempt] = a;
+    }
+
+    public int[] getSecondPlayerNums() {
+        return Arrays.copyOf(secondPlayerNums, 10);
+    }
+
+    public void setSecondPlayerNums(int b) {
+        secondPlayerNums[secondPlayerAttempt] = b;
+    }
+
+    public int getFirstPlayerAttempt() {
+        return firstPlayerAttempt;
+    }
+
+    public void setFirstPlayerAttempt(int c) {
+        this.firstPlayerAttempt = c;
+    }
+
+    public int getSecondPlayerAttempt() {
+        return secondPlayerAttempt;
+    }
+
+    public void setSecondPlayerAttempt(int d) {
+        this.secondPlayerAttempt = d;
     }
 }
