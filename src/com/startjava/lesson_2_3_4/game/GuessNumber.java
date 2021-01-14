@@ -13,20 +13,20 @@ public class GuessNumber {
     }
 
     public void start() {
-        player1.clearNumber();
-        player2.clearNumber();
+        player1.clearNumbers();
+        player2.clearNumbers();
         generateSecretNum();
         System.out.println(randomNum);
+
         for(int i = 0; i < 10; i++) {
-            int num = inputNum(player1, i);
-            if(checkingEnteredNumber(randomNum, num, player1.getAttempt(), player1)) {
-                player1.clearNumber();
+            if(compareNumber(randomNum, i, player1.getAttempt(), player1)) {
+                player1.clearNumbers();
                 break;
             }
 
-            int numTwo = inputNum(player2, i);
-            if(checkingEnteredNumber(randomNum, numTwo, player2.getAttempt(), player2)) {
-                player2.clearNumber();
+            compareAttempt(player2);
+            if(compareNumber(randomNum, i, player2.getAttempt(), player2)) {
+                player2.clearNumbers();
                 break;
             }
         }
@@ -52,8 +52,7 @@ public class GuessNumber {
     /*
     The method checks whether or not to output the array to the console
      */
-    private void showEnteredNums(int a, int b) {
-        if(player1.getAttempt() == 10 || player2.getAttempt() == 10) {
+    private void showEnteredNums() {
             for(int num: player1.getNumbers()) {
                 System.out.print(num + " ");
             }
@@ -63,26 +62,25 @@ public class GuessNumber {
                 System.out.print(num1 + " ");
             }
             System.out.println('\r');
-        }
     }
 
-    /*
-    The method checks the number entered by the player and,
-    depending on the result, changes the flag of the variable exitStartMethodLabel.
-     */
-    private boolean checkingEnteredNumber(int randomNum, int num, int attempt, Player player) {
-        if(player.getAttempt() == 10) {
-            System.out.println("У " + player.getName() + " закончились попытки");
-            showEnteredNums(player1.getAttempt(), player2.getAttempt());
-            return true;
-        }
+    //The method compare the number entered by the player and, depending true or false
+    private boolean compareNumber(int randomNum, int i, int attempt, Player player) {
+        int num = inputNum(player, i);
         if(randomNum == num) {
             System.out.println("Вы угадали!");
             System.out.println("Игрок " + player.getName() + " угадал число " + randomNum + " с " + player.getAttempt() + " попытки");
             return true;
         } else {
-            System.out.println((num > randomNum) ? "Вы не угадали, загаданное число меньше." : "Вы не угадали, загаданное число больше. ");
+            System.out.println("Вы не угадали, загаданное число " + ((num > randomNum) ? "меньше." : "больше. "));
             return false;
+        }
+    }
+
+    private void compareAttempt(Player player) {
+        if(player.getAttempt() == 10) {
+            System.out.println("У " + player.getName() + " закончились попытки");
+            showEnteredNums();
         }
     }
 }
