@@ -4,8 +4,8 @@ import java.util.*;
 
 public class Player {
     private String name;
-    private int[] numbers = new int[10];
-    private int attempt = 0;
+    private int[] nums = new int[10];
+    private int attempt;
 
     public Player(String name) {
         this.name = name;
@@ -15,12 +15,12 @@ public class Player {
         return name;
     }
 
-    public int[] getNumbers() {
-        return Arrays.copyOf(numbers,attempt);
+    public int[] getNums() {
+        return Arrays.copyOf(nums, attempt);
     }
 
-    public void setNumber(int num) {
-        numbers[attempt] = num;
+    public void setNums(int num, int i) {
+        nums[i] = num;
     }
 
     public int getAttempt() {
@@ -31,7 +31,7 @@ public class Player {
         this.attempt = attempt;
     }
 
-    public void clearNumbers() {
-        Arrays.fill(numbers, attempt);
+    public void clearNums() {
+        Arrays.fill(nums, 0);
     }
 }
