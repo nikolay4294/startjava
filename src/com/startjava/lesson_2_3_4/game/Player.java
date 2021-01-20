@@ -32,6 +32,6 @@ public class Player {
     }
 
     public void clearNums() {
-            Arrays.fill(nums, 0, attempt, 0);
+            Arrays.fill(nums, 0, attempt + 1, 0);
     }
 }
