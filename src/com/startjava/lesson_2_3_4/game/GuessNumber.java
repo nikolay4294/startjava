@@ -6,7 +6,6 @@ public class GuessNumber {
     private Player player1;
     private Player player2;
     private int secretNum;
-    private int num;
 
     public GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
@@ -34,6 +33,8 @@ public class GuessNumber {
         showEnteredNums(player2);
         player1.clearNums();
         player2.clearNums();
+        player1.setAttempt(0);
+        player2.setAttempt(0);
     }
 
     private void generateSecretNum() {
@@ -41,17 +42,30 @@ public class GuessNumber {
         secretNum = random.nextInt(100) + 1;
     }
 
-    /*
-    The method read player number from console and return this number
-     */
+    //The method read player number from console and return this number
     private void inputNum(Player player, int i) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Игрок " + player.getName() + " выбирает число");
-        num = scanner.nextInt();
-        player.setNum(num, i);
+        player.setNum(scanner.nextInt(), player.getAttempt());
         player.setAttempt(i + 1);
     }
 
+    //The method compare the number entered by the player and, depending true or false
+    private boolean compareNum(int i, Player player) {
+        if (secretNum == player.getNums()[i]) {
+            System.out.println("Вы угадали!");
+            System.out.println("Игрок " + player.getName() + " угадал число " + secretNum + " с " + player.getAttempt() + " попытки");
+            return true;
+        }
+        System.out.println("Вы не угадали, загаданное число " + ((player.getNums()[i] > secretNum) ? "меньше." : "больше. "));
+        return false;
+    }
+
+    private void compareAttempt(Player player) {
+        if (player.getAttempt() == 10) {
+            System.out.println("У " + player.getName() + " закончились попытки");
+        }
+    }
 
     //The method checks whether or not to output the array to the console
     private void showEnteredNums(Player player) {
@@ -59,23 +73,5 @@ public class GuessNumber {
             System.out.print(num + " ");
         }
         System.out.println('\r');
-    }
-
-    //The method compare the number entered by the player and, depending true or false
-    private boolean compareNum(int i, Player player) {
-        if (secretNum == num) {
-            System.out.println("Вы угадали!");
-            System.out.println("Игрок " + player.getName() + " угадал число " + secretNum + " с " + player.getAttempt() + " попытки");
-            return true;
-        } else {
-            System.out.println("Вы не угадали, загаданное число " + ((num > secretNum) ? "меньше." : "больше. "));
-            return false;
-        }
-    }
-
-    private void compareAttempt(Player player) {
-        if (player.getAttempt() == 10) {
-            System.out.println("У " + player.getName() + " закончились попытки");
-        }
     }
 }

@@ -19,8 +19,8 @@ public class Player {
         return Arrays.copyOf(nums, attempt);
     }
 
-    public void setNum(int num, int i) {
-        nums[i] = num;
+    public void setNum(int num, int attempt) {
+        nums[attempt] = num;
     }
 
     public int getAttempt() {
