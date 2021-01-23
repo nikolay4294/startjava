@@ -17,14 +17,14 @@ public class GuessNumber {
         System.out.println(secretNum);
 
         for (int i = 0; i < 10; i++) {
-            inputNum(player1, i);
-            if (compareNum(i, player1)) {
+            inputNum(player1);
+            if (compareNum(player1)) {
                 break;
             }
             compareAttempt(player1);
 
-            inputNum(player2, i);
-            if (compareNum(i, player2)) {
+            inputNum(player2);
+            if (compareNum(player2)) {
                 break;
             }
             compareAttempt(player2);
@@ -43,22 +43,25 @@ public class GuessNumber {
     }
 
     //The method read player number from console and return this number
-    private void inputNum(Player player, int i) {
+    private void inputNum(Player player) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Игрок " + player.getName() + " выбирает число");
-        player.setNum(scanner.nextInt(), player.getAttempt());
-        player.setAttempt(i + 1);
+        player.setNum(scanner.nextInt());
     }
 
     //The method compare the number entered by the player and, depending true or false
-    private boolean compareNum(int i, Player player) {
-        if (secretNum == player.getNums()[i]) {
+    private boolean compareNum(Player player) {
+        if (secretNum == getLastNum(player)) {
             System.out.println("Вы угадали!");
             System.out.println("Игрок " + player.getName() + " угадал число " + secretNum + " с " + player.getAttempt() + " попытки");
             return true;
         }
-        System.out.println("Вы не угадали, загаданное число " + ((player.getNums()[i] > secretNum) ? "меньше." : "больше. "));
+        System.out.println("Вы не угадали, загаданное число " + ((getLastNum(player) > secretNum) ? "меньше." : "больше. "));
         return false;
+    }
+
+    private int getLastNum(Player player) {
+        return player.getNums()[player.getAttempt() - 1];
     }
 
     private void compareAttempt(Player player) {

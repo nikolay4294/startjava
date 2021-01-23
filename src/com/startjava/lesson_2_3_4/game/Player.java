@@ -19,8 +19,9 @@ public class Player {
         return Arrays.copyOf(nums, attempt);
     }
 
-    public void setNum(int num, int attempt) {
+    public void setNum(int num) {
         nums[attempt] = num;
+        attempt++;
     }
 
     public int getAttempt() {
@@ -32,6 +33,6 @@ public class Player {
     }
 
     public void clearNums() {
-            Arrays.fill(nums, 0, attempt, 0);
+        Arrays.fill(nums, 0, attempt, 0);
     }
 }
